@@ -22,4 +22,17 @@
 			<formatter type="xml" toFile="build/checkstyle_errors.xml"/>
 		</checkstyle>
 	</target>
+	<target name="junit">
+		<junit printsummary="yes" haltonfailure="yes">
+			<classpath>
+				<pathelement location="build/classes"/>
+				<pathelement path="WebContent/WEB-INF/lib/junit-4.13.2.jar"/>
+				<pathelement path="WebContent/WEB-INF/lib/hamcrest-core-1.3.jar"/>
+			</classpath>
+
+			<test name="junit.TestCalculator" haltonfailure="no" outfile="TestCalculator_JUnitResult">
+				<formatter type="plain"/>
+			</test>
+		</junit>
+	</target>
 </project>
