@@ -1,41 +1,41 @@
-/*
- * Classname
-*
- * Version info
- *
- * Copyright notice
+package junit;
+
+public class Calculator{
+ //no-arg constructor
+ public Calculator() {
+ }
+ /**
+ * Sum method.
  */
+ public int add(int a, int b) {
+  return a + b;
+ }
+ /**
+ * Subtract method.
+ */
+ public int subtract(int a, int b) {
+  return a - b;
+ }
 
-import java.util.Scanner;
-public class TestCalculator {
+ /**
+ * Multiply method.
+ */
+ public long multiply(int a, int b) {
+  return a * b;
+ }
 
-public static void main(String[] args) {
-    // TODO Auto-generated method stub
-
-    int num1;
-    int num2;
-    String operation;
-    Scanner input = new Scanner(System.in);
-
-    System.out.println("Please Enter The First Number");
-    num1 = input.nextInt();
-
-    System.out.println("Please Enter The Second Number");
-    num2 = input.nextInt();
-
-    Scanner op = new Scanner(System.in);
-
-    System.out.println("Please Enter The Operation");
-    operation = op.next();
-
-    if (operation.equals("+")) {
-        System.out.println("Your Answer is " + (num1 + num2));
-    } else if (operation.equals("-")) {
-        System.out.println("Your Answer is " + (num1 - num2));
-    } else if (operation.equals("*")) {
-        System.out.println("Your Answer is " + (num1 * num2));
-    } else if (operation.equals("/")) {
-        System.out.println("Your Answer is " + (num1 / num2));
-    }
-}
+ /**
+ * Divide method.
+ * Note that this method throws an exception when
+ * b is zero.
+ */
+ public double divide(int a, int b) {
+  double result;
+  if (b == 0) {
+   throw new IllegalArgumentException("Divisor cannot divide by zero");
+  } else {
+   result = Double.valueOf(a)/Double.valueOf(b);
+  }
+  return result;
+ }
 }
